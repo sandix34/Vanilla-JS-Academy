@@ -18,6 +18,8 @@ Count the number of words and characters in a block of text.
 
 [Character count](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Character-count)
 
+[Character and Word Count](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Character-and-word-count)
+
 ---
 ### Credits
 

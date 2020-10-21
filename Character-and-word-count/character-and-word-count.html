@@ -43,7 +43,8 @@
         // Display the characters count
         characterCount.textContent = text.value.length;
 
-        // Convert string into an array and filter space
+        // Convert string into an array and filter space with a regex
+        //  test your regular expressions --> https://regex101.com/
         let numberOfWords = text.value.split(/\s+/).filter ((word) => {
           return word !== '';
         });
