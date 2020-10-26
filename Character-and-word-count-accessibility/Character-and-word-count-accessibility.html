@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Character & Word Count</title>
+
+    <style type="text/css">
+      body {
+        margin: 1em auto;
+        max-width: 40em;
+        width: 88%;
+      }
+
+      label {
+        display: block;
+        width: 100%;
+      }
+
+      textarea {
+        min-height: 24em;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Character & Word Count</h1>
+
+    <label for="text">Enter your text below.</label>
+    <textarea id="text"></textarea>
+
+    <p id="count" aria-live="polite">
+      You've written 0 words and 0 characters.
+    </p>
+
+    <script>
+      // Get the text area, word and character count elements
+      const text = document.querySelector("#text");
+      const count = document.querySelector("#count");
+
+      // Listen for changes to the text area content
+      text.addEventListener("input", function (event) {
+
+          // Convert string into an array and filter space with a regex
+          //  test your regular expressions --> https://regex101.com/
+          let words = text.value.split(/\s+/).filter((word) => {
+            return word.length > 0;
+          });
+
+          // Display the word and character counts
+          count.textContent = "You've written " + words.length + " words and " + text.value.length + " characters.";
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
