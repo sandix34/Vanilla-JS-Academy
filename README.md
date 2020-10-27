@@ -27,6 +27,8 @@ Show random Ron Swanson quotes using API calls.
 
 [Ramdom Ron](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Random-ron)
 
+[Random Ron without duplicates](https://courses.gomakethings.com/academy/2020-10/project-random-ron-without-duplicates/)
+
 ---
 ### Credits
 
