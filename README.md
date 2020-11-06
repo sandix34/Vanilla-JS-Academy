@@ -29,6 +29,10 @@ Show random Ron Swanson quotes using API calls.
 
 [Random Ron without duplicates](https://courses.gomakethings.com/academy/2020-10/project-random-ron-without-duplicates/)
 
+### 📰 Top Stories
+Use the New York Times API to get and display today's top stories.
+
+
 ---
 ### Credits
 
