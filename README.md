@@ -32,6 +32,11 @@ Show random Ron Swanson quotes using API calls.
 ### 📰 Top Stories
 Use the New York Times API to get and display today's top stories.
 
+[NYT top stories](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/NYT-top-stories)
+
+[NYT multiple categories](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/NYT-multiple-categories)
+
+[NYT sanitizing](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/NYT-sanitizing)
 
 ---
 ### Credits
