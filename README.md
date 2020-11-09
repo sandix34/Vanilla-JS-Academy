@@ -38,6 +38,18 @@ Use the New York Times API to get and display today's top stories.
 
 [NYT sanitizing](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/NYT-sanitizing)
 
+### 👾 Avoid the Monster
+Create a fun game where you find your monster friends and avoid the sock.
+
+[Monster shuffle](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Monster-shuffle)
+
+[Find the Monsters](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Find-the-monsters)
+
+[Find the Monsters - Track Wins](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Fint-the-monsters-Track-wins)
+
+### 📄 Table of Contents
+Dynamically generate a table of contents from page headings.
+
 ---
 ### Credits
 
