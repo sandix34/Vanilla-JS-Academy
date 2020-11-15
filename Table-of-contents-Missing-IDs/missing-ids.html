@@ -186,7 +186,20 @@
           '<h2>Table of Contents</h2>' +
           '<ol>' +
             Array.prototype.slice.call(titles).map(function (title) {
-              return '<li><a href="#' + title.id + '">' + title.textContent + '</a></li>';
+
+              // Replace spaces with dashes
+              titleID = title.textContent.replace(new RegExp(' ', 'g'), '-');
+
+              // create new ID
+              title.setAttribute("id", titleID);
+
+              // If there is no id use the new one otherwise use the existing one
+              if (title.hasAttribute("id")) {
+                return '<li><a href="#' + titleID + '">' + title.textContent + '</a></li>';
+              } else {
+                return '<li><a href="#' + title.id + '">' + title.textContent + '</a></li>';
+              }
+
             }).join('') +
           '</ol>';
       }
