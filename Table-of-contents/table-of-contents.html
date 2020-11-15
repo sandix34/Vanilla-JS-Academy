@@ -168,26 +168,29 @@
 
     <script>
       // Get all H2 and convert in a array
-      const titles = Array.prototype.slice.call(document.querySelectorAll("h2"));
+      const titles = document.querySelectorAll("h2");
       console.log(titles);
 
       // Get DIV of table of content
       const tableOfContent = document.querySelector("#table-of-contents");
 
-      // render the table of content
-      tableOfContent.innerHTML = 
-        '<ul>' + titles.map(function (title) {
 
-          const titleID = title.getAttribute('id');
-          const titleContent = title.textContent;
+      // Make sure there's at least one titles
+      // Only generate markup if there are titles elements
+      if (titles.length > 0) {
 
-          const html = 
-            '<li>' + 
-              '<a href="#' + titleID + '">' + titleContent + '</a>'
-            '</li>';
-          return html;
-        })
-        .join("") + '</ul>';
+        // Set the HTML for the table of contents container
+			  // Add a heading and an ordered list
+			  // Convert the headings NodeList to an array, and use the array.map() method
+			  // to create an array of markup strings that we'll combine with the array.join() method
+        tableOfContent.innerHTML = 
+          '<h2>Table of Contents</h2>' +
+          '<ol>' +
+            Array.prototype.slice.call(titles).map(function (title) {
+              return '<li><a href="#' + title.id + '">' + title.textContent + '</a></li>';
+            }).join('') +
+          '</ol>';
+      }
     </script>
   </body>
 </html>
