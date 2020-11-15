@@ -187,19 +187,14 @@
           '<ol>' +
             Array.prototype.slice.call(titles).map(function (title) {
 
-              // Replace spaces with dashes
-              titleID = title.textContent.replace(new RegExp(' ', 'g'), '-');
-
-              // create new ID
-              title.setAttribute("id", titleID);
-
-              // If there is no id use the new one otherwise use the existing one
-              if (title.hasAttribute("id")) {
-                return '<li><a href="#' + titleID + '">' + title.textContent + '</a></li>';
-              } else {
-                return '<li><a href="#' + title.id + '">' + title.textContent + '</a></li>';
-              }
-
+            // If the title.id.length is less than 1, there's no ID on the element
+						// We need to add one
+						if (title.id.length < 1) {
+							// Replace anything that's not a letter or number with dashes
+							title.id = title.textContent.replace(/[^a-z0-9]+/gi, '-');
+						}
+              return '<li><a href="#' + title.id + '">' + title.textContent + '</a></li>';
+              
             }).join('') +
           '</ol>';
       }
