@@ -50,6 +50,15 @@ Create a fun game where you find your monster friends and avoid the sock.
 ### 📄 Table of Contents
 Dynamically generate a table of contents from page headings.
 
+[Table of contents](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Table-of-contents)
+
+[Table od contents - Missing IDs](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Table-of-contents-Missing-IDs)
+
+[Table of contents - Scope](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Table-of-contents-scope)
+
+### 🌞 Weather App
+Find a visitor's location and display their local weather.
+
 ---
 ### Credits
 
