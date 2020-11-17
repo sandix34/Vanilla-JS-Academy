@@ -29,10 +29,10 @@
       //
 
       // Store the weather API key to a variable for easier configuration
-      var apiKey = "YOUR API KEY";
+      const apiKey = "YOUR API KEY";
 
       // Get the #app element
-      var app = document.querySelector("#app");
+      const app = document.querySelector("#app");
 
       //
       // Methods
@@ -43,8 +43,8 @@
        * @param  {String} str  The user-submitted string
        * @return {String} str  The sanitized string
        */
-      var sanitizeHTML = function (str) {
-        var temp = document.createElement("div");
+      const sanitizeHTML = function (str) {
+        const temp = document.createElement("div");
         temp.textContent = str;
         return temp.innerHTML;
       };
@@ -52,7 +52,7 @@
        * Render the weather data into the DOM
        * @param  {Object} weather The weather data object
        */
-      var renderWeather = function (weather) {
+      const renderWeather = function (weather) {
         app.innerHTML =
           "<p>" +
           '<img src="https://www.weatherbit.io/static/img/icons/' +
