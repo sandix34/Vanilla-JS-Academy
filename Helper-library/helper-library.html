@@ -89,6 +89,24 @@
         // Return public methods
         return methods;
       })();
-    </script>
-  </body>
-</html>
+
+      // lib.convert()
+      const arr = lib.convert(document.querySelectorAll('button'));
+      console.log('lib.convert()', arr);
+
+      // lib.getElement()
+      const btn = lib.getElement('#button-2');
+      console.log('lib.getElement()', btn);
+
+      // lib.getAllElements()
+      const btns = lib.getAllElements('button');
+      console.log('lib.getAllElements()', btns);
+
+      // lib.addClass()
+      lib.addClass(btns, 'btn-purple');
+
+      // lib.removeClass()
+      lib.removeClass(btns, 'btn-blue');
+          </script>
+        </body>
+      </html>
