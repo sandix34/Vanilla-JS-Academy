@@ -59,6 +59,14 @@ Dynamically generate a table of contents from page headings.
 ### 🌞 Weather App
 Find a visitor's location and display their local weather.
 
+[Weather app](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Weather-app)
+
+[Weather plugin](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Weather-plugin)
+
+### 📌 DOM Library
+Create your own tiny DOM manipulation library.
+
+
 ---
 ### Credits
 
