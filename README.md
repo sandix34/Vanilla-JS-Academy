@@ -66,6 +66,15 @@ Find a visitor's location and display their local weather.
 ### 📌 DOM Library
 Create your own tiny DOM manipulation library.
 
+[Helper library](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Helper-library)
+
+[DOM manipulation library](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/DOM-manipulation-library)
+
+[DOM manipulation library with chaining methods](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Library-with-chaining-methods)
+
+### ⭐ Form Saver
+Automatically save form data as a user types.
+
 
 ---
 ### Credits
