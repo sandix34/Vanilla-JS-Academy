@@ -80,6 +80,7 @@
           this.items().forEach(function (elem) {
             elem.classList.add(className);
           });
+          return this;
         };
 
         /**
@@ -90,6 +91,7 @@
           this.items().forEach(function (elem) {
             elem.classList.remove(className);
           });
+          return this;
         };
 
         // Return the constructor object
@@ -110,11 +112,8 @@
       // $.last()
       console.log("$.last()", btns.last());
 
-      // $.addClass()
-      btns.addClass("btn-purple");
-
-      // $.removeClass()
-      btns.removeClass("btn-blue");
+      // chaining $.addClass() and $.removeClass()
+      btns.addClass("btn-purple").removeClass("btn-blue");
     </script>
   </body>
 </html>
