@@ -51,9 +51,7 @@
     <script>
       // create the necessary constants
       const form = document.querySelector("#save-me");
-      const nameInput = document.querySelector("#name");
-      const addressInput = document.querySelector("#address");
-      const emailInput = document.querySelector("#email");
+      const inputs = Array.prototype.slice.call(document.querySelectorAll("input"));
       const text = document.querySelector("#more");
 
       // Prevent form from being submitted
@@ -61,51 +59,52 @@
         event.preventDefault();
       });
 
-      // store the name entered in the web storage
-      nameInput.addEventListener("input", function (event) {
-        localStorage.setItem("name", nameInput.value);
-        // run to display the user's saved data
-        savedDataDisplay();
-      });
-
-      // store the adress entered in the web storage
-      addressInput.addEventListener("input", function (event) {
-        localStorage.setItem("address", addressInput.value);
-        // run to display the user's saved data
-        savedDataDisplay();
-      });
-
-      // store the email entered in the web storage
-      emailInput.addEventListener("input", function (event) {
-        localStorage.setItem("email", emailInput.value);
-        // run to display the user's saved data
-        savedDataDisplay();
+      // store name, address and email entered in the web storage
+      inputs.forEach(function (input) {
+        input.addEventListener("input", function (event) {
+          localStorage.setItem(event.target.name, event.target.value);
+          // run to display the user's saved data in the form
+          savedDataDisplay();
+        });
       });
 
       // store the text entered in the web storage
       text.addEventListener("keypress", function (event) {
         localStorage.setItem("text", text.value);
-        // run to display the user's saved data
+        // run to display the user's saved data in the form
         savedDataDisplay();
       });
 
       // form is submitted, wipe the form and  clear the data from storage
       form.addEventListener("submit", function (event) {
-        nameInput.value = "";
-        addressInput.value = "";
-        emailInput.value = "";
+        // for the textarea
         text.value = "";
 
+        // for all inputs
+        inputs.forEach(function (input) {
+          input.value = "";
+        });
+
+        // clear the data
         localStorage.clear();
       });
 
-
-      // define function
+      // When the page is reloaded or opened back up, the form should be repopulated with the user’s saved data
       (function savedDataDisplay() {
-        if (localStorage.getItem("name")) {
-          let name = localStorage.getItem("name");
-          nameInput.value = name;
+
+        // for the textarea
+        if (localStorage.getItem("text")) {
+          let name = localStorage.getItem("text");
+          text.value = name;
         }
+
+        // for all inputs
+        inputs.forEach(function (input) {
+          if (localStorage.getItem(input.name)) {
+            let name = localStorage.getItem(input.name);
+            input.value = name;
+          }
+        });
       })();
     </script>
   </body>
