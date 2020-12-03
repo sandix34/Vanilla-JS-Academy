@@ -75,6 +75,13 @@ Create your own tiny DOM manipulation library.
 ### ⭐ Form Saver
 Automatically save form data as a user types.
 
+[Autosave](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Autosave)
+[Autosave single entry](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Autosave-single-entry)
+[Autosave other field types](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Autosave-other-field-types)
+
+### 📥 API Cache
+Cache API data for more resilient apps.
+
 
 ---
 ### Credits
