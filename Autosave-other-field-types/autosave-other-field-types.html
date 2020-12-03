@@ -131,7 +131,7 @@
 
         // Get all of the form fields
         const fields = document.querySelectorAll(
-          "#save-me input, #save-me textarea, #save-me [radio], #save-me [chekbox], #save-me select"
+          "#save-me input, #save-me textarea, #save-me [radio], #save-me select"
         );
 
         console.log(fields);
@@ -146,7 +146,16 @@
           if (!saved[id]) return;
 
           // Set the field value to the saved data in localStorage
-          field.value = saved[id];
+          // If it's a checkbox, set it's checked state
+          // If it's a radio button and its value matches, set its checked state
+          // Otherwise, set the value
+          if (field.type === "checkbox") {
+            field.checked = saved[id] === "on" ? true : false;
+          } else if (field.type === "radio") {
+            field.checked = saved[id] === field.value ? true : false;
+          } else {
+            field.value = saved[id];
+          }
         });
       };
 
@@ -158,21 +167,27 @@
         // Only run for fields in the #save-me form
         if (!event.target.closest("#save-me")) return;
 
-          // Get an ID for the field
-          const id = getID(event.target);
-          //console.log(event.target.checked);
-          if (!id) return;
+        // Get an ID for the field
+        const id = getID(event.target);
+        if (!id) return;
 
-          // Get existing data from localStorage
-          let saved = localStorage.getItem(storageID);
-          saved = saved ? JSON.parse(saved) : {};
+        console.log(event.target.value);
 
-          // Add the field to the localStorage object
+        // Get existing data from localStorage
+        let saved = localStorage.getItem(storageID);
+        saved = saved ? JSON.parse(saved) : {};
+
+        // Add the field to the localStorage object
+        // If it's a checkbox, use on/off values
+        // Otherwise, save the value
+        if (event.target.type === "checkbox") {
+          saved[id] = event.target.checked ? "on" : "off";
+        } else {
           saved[id] = event.target.value;
+        }
 
-          // Save the object back to localStorage
-          localStorage.setItem(storageID, JSON.stringify(saved));
-
+        // Save the object back to localStorage
+        localStorage.setItem(storageID, JSON.stringify(saved));
       };
 
       /**
