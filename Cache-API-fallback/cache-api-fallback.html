@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>API Cache</title>
+    <title>API Cache - Fallback</title>
 
     <style type="text/css">
       body {
@@ -25,7 +25,7 @@
     </style>
   </head>
   <body>
-    <h1>API Cache</h1>
+    <h1>API Cache - Fallback</h1>
     <p>
       <em
         ><strong>The Scuttlebutt</strong>&mdash;the number one source for pirate
@@ -51,6 +51,17 @@
       //
 
       /**
+       * Dynamically vary the API endpoint
+       * @return {String} The API endpoint
+       */
+      const getEndpoint = function () {
+        const endpoint = "https://vanillajsacademy.com/api/";
+        const random = Math.random();
+        if (random < 0.5) return endpoint + "pirates.json";
+        return endpoint + "fail.json";
+      };
+
+      /**
        * Sanitize and encode all HTML in a user-submitted string
        * @param  {String} str  The user-submitted string
        * @return {String} str  The sanitized string
@@ -74,13 +85,14 @@
        * @param  {Object} data The API response object
        */
       const renderNews = function (data) {
+        console.log(data);
+
         // If there are no articles, render a message into the UI
         if (data.articles.length < 1) {
           renderNoArticles();
           return;
         }
 
-        // Otherwise, render the UI
         app.innerHTML =
           data.articles
             .map(function (article) {
@@ -147,10 +159,31 @@
         saved = JSON.parse(saved);
 
         // If data is has not expired, return it
-        // Use cached data from 30 seconds
-        if (isDataValid(saved, 1000 * 30)) {
+        // Use cached data from 5 seconds
+        if (isDataValid(saved, 1000 * 5)) {
           return saved.data;
         }
+      };
+
+      /**
+       * Render content from API cache on failed request
+       */
+      const renderFallback = function () {
+        // Get data from localStorage
+        let saved = localStorage.getItem(storageID);
+
+        // If there's no API cache, show message in the UI
+        if (!saved) {
+          renderNoArticles();
+          return;
+        }
+
+        // Parse saved data
+        saved = JSON.parse(saved);
+
+        // Render articles with cached data
+        renderNews(saved.data);
+        console.log("Fallback from cache after failure");
       };
 
       /**
@@ -159,7 +192,7 @@
       const fetchArticles = function () {
         // Check for valid cached data
         // If it exists, use it
-        let saved = getData();
+        const saved = getData();
         if (saved) {
           renderNews(saved);
           console.log("Loaded from cache");
@@ -167,7 +200,7 @@
         }
 
         // Otherwise, fetch articles from the API
-        fetch("https://vanillajsacademy.com/api/pirates.json")
+        fetch(getEndpoint())
           .then(function (response) {
             if (response.ok) {
               return response.json();
@@ -181,7 +214,7 @@
             console.log("Fetched from API");
           })
           .catch(function () {
-            renderNoArticles();
+            renderFallback();
           });
       };
 
