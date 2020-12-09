@@ -84,6 +84,11 @@ Automatically save form data as a user types.
 ### 📥 API Cache
 Cache API data for more resilient apps.
 
+[Cache API](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Cache-API)
+
+[Cache API fallback](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Cache-API-fallback)
+
+### ⏰ Countdown Timer
 
 ---
 ### Credits
