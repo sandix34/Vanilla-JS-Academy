@@ -89,6 +89,18 @@ Cache API data for more resilient apps.
 [Cache API fallback](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Cache-API-fallback)
 
 ### ⏰ Countdown Timer
+Create a countdown timer app for tracking tasks.
+
+[Countdown Timer](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Countdown-timer)
+
+[Timer Formated](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Timer-formated)
+
+[Timer start and pause buttons](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Timer-start%20-and-pause-buttons)
+
+[Timer Reactive Data](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Timer-reactive-data)
+
+### 🧭 Explore
+Explore cool, quirky places in your own backyard.
 
 ---
 ### Credits
