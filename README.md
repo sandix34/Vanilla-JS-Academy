@@ -102,6 +102,12 @@ Create a countdown timer app for tracking tasks.
 ### 🧭 Explore
 Explore cool, quirky places in your own backyard.
 
+[Places](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Places)
+
+[Favorites Places](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Favorites-places)
+
+[Filter Places](https://github.com/sandix34/Vanilla-JS-Academy/tree/master/Filter-places)
+
 ---
 ### Credits
 
